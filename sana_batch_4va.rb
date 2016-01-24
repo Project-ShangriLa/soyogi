@@ -75,6 +75,11 @@ def connect_twitter(account_list)
         user.listed_count,
         user.screen_name
     ] if @account_key_hash[user.screen_name] != nil
+
+    if @account_key_hash[user.screen_name] == nil
+      puts "#{user.name} #{user.screen_name}"
+    end
+
   end
 end
 
