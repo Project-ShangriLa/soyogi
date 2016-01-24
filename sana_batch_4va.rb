@@ -37,7 +37,7 @@ AAA
 end
 BBB
 
-@today = Date.today
+@today = DateTime.now
 
 @db = Sequel.mysql2('anime_admin_development', :host=>'localhost', :user=>'root', :password=>'', :port=>'3306')
 
@@ -50,31 +50,31 @@ BBB
 def connect_twitter(account_list)
   @tw.users(account_list).each do |user|
     @status_rows << [
-        @account_key_hash[user.name],
+        @account_key_hash[user.screen_name],
         user.followers_count,
         @today,
         @today,
         user.name,
-        user.description,
+        user.description.to_s,
         user.favorites_count,
         user.friends_count,
         user.listed_count,
         user.screen_name
-    ]
+    ] if @account_key_hash[user.screen_name] != nil
 
     @history_rows << [
-        @account_key_hash[user.name],
+        @account_key_hash[user.screen_name],
         user.followers_count,
         @today,
         @today,
         @today,
         user.name,
-        user.description,
+        user.description.to_s,
         user.favorites_count,
         user.friends_count,
         user.listed_count,
         user.screen_name
-    ]
+    ] if @account_key_hash[user.screen_name] != nil
   end
 end
 
@@ -141,6 +141,11 @@ account_list.each_slice(ONE_REQUEST_LIMIT_NUM).to_a.each do |account_slist|
   puts account_slist.size
   #配列を区切ってTwitterにリクエスト
   connect_twitter(account_slist)
+
+  p @status_rows
+  #save_db()
+  #exit;
+
   puts 'sleep'
   sleep ONE_REQUEST_SLEEP_SEC
 end
