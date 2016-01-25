@@ -1,6 +1,7 @@
 #Sana Batch For Voice Actor
 #http://www.rubydoc.info/gems/twitter/Twitter/User#location-instance_method
 require 'sequel'
+require 'pp'
 require "./twitter.rb"
 
 <<AAA
@@ -46,6 +47,7 @@ BBB
 #アカウントをキーとしたハッシュを作る 必要な値はID
 @account_key_hash = {}
 
+@twitter_result_account = []
 
 def connect_twitter(account_list)
   @tw.users(account_list).each do |user|
@@ -59,7 +61,9 @@ def connect_twitter(account_list)
         user.favorites_count,
         user.friends_count,
         user.listed_count,
-        user.screen_name
+        user.screen_name,
+        user.profile_image_url.to_s,
+        user.statuses_count
     ] if @account_key_hash[user.screen_name] != nil
 
     @history_rows << [
@@ -73,11 +77,16 @@ def connect_twitter(account_list)
         user.favorites_count,
         user.friends_count,
         user.listed_count,
-        user.screen_name
+        user.screen_name,
+        user.profile_image_url.to_s,
+        user.statuses_count
     ] if @account_key_hash[user.screen_name] != nil
 
     if @account_key_hash[user.screen_name] == nil
       puts "#{user.name} #{user.screen_name}"
+      pp user.to_hash
+    else
+      @twitter_result_account << user.screen_name
     end
 
   end
@@ -110,6 +119,8 @@ def save_db()
                                                       :friends_count,
                                                       :listed_count,
                                                       :screen_name,
+                                                      :profile_image_url,
+                                                      :statuses_count
                                                   ], @status_rows)
 
   #結果をhistoryに格納(insertのみ)
@@ -125,11 +136,13 @@ def save_db()
                                                                 :friends_count,
                                                                 :listed_count,
                                                                 :screen_name,
+                                                                :profile_image_url,
+                                                                :statuses_count
                                                             ], @history_rows)
 end
 
 ONE_REQUEST_LIMIT_NUM = 100
-ONE_REQUEST_SLEEP_SEC = 60
+ONE_REQUEST_SLEEP_SEC = 30
 
 
 
@@ -147,7 +160,7 @@ account_list.each_slice(ONE_REQUEST_LIMIT_NUM).to_a.each do |account_slist|
   #配列を区切ってTwitterにリクエスト
   connect_twitter(account_slist)
 
-  p @status_rows
+  #p @status_rows
   #save_db()
   #exit;
 
@@ -156,6 +169,8 @@ account_list.each_slice(ONE_REQUEST_LIMIT_NUM).to_a.each do |account_slist|
 end
 
 save_db()
+
+p account_list - @twitter_result_account
 
 #処理を終了する ループはcrontabでやる
 #６時間に１度ぐらいで
