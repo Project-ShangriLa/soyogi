@@ -5,3 +5,4 @@ gem 'nokogiri'
 gem 'sequel'
 gem 'mysql2'
 gem "twitter"
+gem 'whenever'
