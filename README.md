@@ -5,6 +5,14 @@
 sqlフォルダを参照
 
 ```
+mysql anime_admin_development < voice_actor_masters.sql
+mysql anime_admin_development < voice_actor_twitter_follwer_status.sql
+mysql anime_admin_development < voice_actor_twitter_follwer_status_histories.sql
+mysql anime_admin_development < voice_actor_masters_dml.sql
+```
+
+
+```
 bundle install
 ```
 
