@@ -42,6 +42,7 @@ EOS
   </a>
 </div>
 #{amazon_widget2}
+<p class="text-info lead">データ更新日時 #{Time.now.strftime("%Y-%m-%d %H時%M分%S秒")}</p>
 #{table_start}
 EOS
 
@@ -52,10 +53,10 @@ EOS
   vatfs.each_with_index do |va, i|
     body_string += <<EOS
     <tr>
-     <th class="col-md-1">#{i + 1}</th>
-     <td class="col-md-1">#{va[:follower]}</td>
+     <th class="col-md-1"><p class="lead">#{i + 1}</p></th>
+     <td class="col-md-1"><p class="lead">#{va[:follower]}</p></td>
      <td class="col-md-1"><a href="#" onclick="javascript:window.open('https://twitter.com/#{va[:screen_name]}');"><img data-layzr="#{va[:profile_image_url].gsub(/normal/,'bigger')}"></a></td>
-     <td class="col-md-2">#{va[:name]}</td>
+     <td class="col-md-2"><p class="lead">#{va[:name]}</p></td>
      <td class="col-md-5 hidden-xs hidden-sm">#{va[:description]}</td>
      <td class="col-md-2 hidden-xs hidden-sm">#{va[:screen_name]}</td>
     </tr>
