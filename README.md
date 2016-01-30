@@ -13,3 +13,9 @@ bundle install
 ```
 bundle exec ruby sana_batch_4va.rb
 ```
+
+## ランキングサイト構築
+
+```
+ruby gen_va_ranking.rb > /usr/local/var/www/va/va.html
+```
