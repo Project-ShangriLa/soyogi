@@ -66,9 +66,7 @@ EOS
   end
 
   body_string += table_end
-  #TODO 更新日時
-  #TODO 4時間毎に更新
-  #TODO from AKIBA IT LAB
+  #TODO og:title等 SEO http://qiita.com/taiyop/items/050c6749fb693dae8f82
   #TODO 上位をグラフ保存化
   #TODO ランキングコピー化
   #TODO シェアボタン
