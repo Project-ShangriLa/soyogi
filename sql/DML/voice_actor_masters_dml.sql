@@ -7,7 +7,7 @@
 #
 # ホスト: 127.0.0.1 (MySQL 5.6.13)
 # データベース: anime_admin_development
-# 作成時刻: 2016-01-30 21:28:52 +0000
+# 作成時刻: 2016-01-31 19:44:29 +0000
 # ************************************************************
 
 
@@ -22,6 +22,25 @@
 
 # テーブルのダンプ voice_actor_masters
 # ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `voice_actor_masters`;
+
+CREATE TABLE `voice_actor_masters` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `twitter_account` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `homepage` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `blog` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `gender` int(11) DEFAULT NULL,
+  `note` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `company` text COLLATE utf8_unicode_ci,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `list_from_site` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `index_voice_actor_masters_on_name` (`name`),
+  UNIQUE KEY `index_voice_actor_masters_on_twitter_account1` (`twitter_account`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 LOCK TABLES `voice_actor_masters` WRITE;
 /*!40000 ALTER TABLE `voice_actor_masters` DISABLE KEYS */;
@@ -835,7 +854,12 @@ VALUES
 	(2056,'黒沢ともよ','TomoyoKurosawa',NULL,NULL,1,NULL,NULL,'2016-01-30 19:45:28','2016-01-30 19:45:28','http://meyou.jp/ranking/follower_voice'),
 	(2057,'高橋 広樹','H_I_R_O_K_I____',NULL,NULL,1,NULL,NULL,'2016-01-30 19:45:28','2016-01-30 19:45:28','http://meyou.jp/ranking/follower_voice'),
 	(2058,'内山夕実','yuumin_uchiyama',NULL,NULL,1,NULL,NULL,'2016-01-30 19:45:28','2016-01-30 19:45:28','http://meyou.jp/ranking/follower_voice'),
-	(2059,'愛美','aimi_sound',NULL,NULL,1,NULL,NULL,'2016-01-30 19:45:28','2016-01-30 19:45:28','http://meyou.jp/ranking/follower_voice');
+	(2059,'愛美','aimi_sound',NULL,NULL,1,NULL,NULL,'2016-01-30 19:45:28','2016-01-30 19:45:28','http://meyou.jp/ranking/follower_voice'),
+	(2060,'楠田亜衣奈','kusudaaina',NULL,NULL,1,'ラブライブ',NULL,'2016-02-01 04:30:00','2016-02-01 04:30:00','origin'),
+	(2061,'久保ユリカ','shikaco_staff',NULL,NULL,1,'ラブライブ',NULL,'2016-02-01 04:30:00','2016-02-01 04:30:00','origin'),
+	(2062,'小宮有紗','arisakomiya',NULL,NULL,1,'ラブライブ！サンシャイン!!',NULL,'2016-02-01 04:30:00','2016-02-01 04:30:00','origin'),
+	(2063,'小林愛香','Aikyan_',NULL,NULL,1,'ラブライブ！サンシャイン!!',NULL,'2016-02-01 04:30:00','2016-02-01 04:30:00','origin'),
+	(2064,'高槻かなこ','kanako_tktk',NULL,NULL,1,'ラブライブ！サンシャイン!!',NULL,'2016-02-01 04:30:00','2016-02-01 04:30:00','origin');
 
 /*!40000 ALTER TABLE `voice_actor_masters` ENABLE KEYS */;
 UNLOCK TABLES;
