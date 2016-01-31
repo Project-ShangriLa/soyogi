@@ -60,6 +60,6 @@ whenever -w -f private/schedule.rb
 
 ## メモ サイトを構築する際のOGP設定について
 
-- [http://qiita.com/taiyop/items/050c6749fb693dae8f82](Qiita)
-- [https://developers.facebook.com/tools/debug/og/object/](FaceBook)
-- [https://cards-dev.twitter.com/validator](Twitter Card)
+- [http://qiita.com/taiyop/items/050c6749fb693dae8f82](http://qiita.com/taiyop/items/050c6749fb693dae8f82)
+- [https://developers.facebook.com/tools/debug/og/object/](https://developers.facebook.com/tools/debug/og/object/)
+- [https://cards-dev.twitter.com/validator](https://cards-dev.twitter.com/validator)
