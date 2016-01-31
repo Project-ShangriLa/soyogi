@@ -1,5 +1,6 @@
 #http://www.bootstrapcdn.com/
 require 'sequel'
+require 'optparse'
 
 def body()
   amazon_widget = <<EOS
@@ -129,6 +130,20 @@ footer = <<"EOS"
 EOS
 
 
-puts head
-puts body
-puts footer
+output_filename = nil
+opt = OptionParser.new
+Version = '1.0.0'
+opt.on('-o OUTPUT FILENAME', 'output filename') {|v| output_filename = v }
+opt.parse!(ARGV)
+
+if output_filename.nil?
+  puts head
+  puts body
+  puts footer
+else
+  File.open(output_filename, 'w') do |file|
+    file.puts head
+    file.puts body
+    file.puts footer
+  end
+end

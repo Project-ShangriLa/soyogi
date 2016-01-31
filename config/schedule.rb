@@ -20,5 +20,5 @@
 # Learn more: http://github.com/javan/whenever
 set :output, "/var/log/cron.log"
 every 4.hour do
-  command "source .bashrc;cd $VOICE_ACTOR_TOOL;bundle exec ruby sana_batch_4va.rb;bundle exec ruby gen_va_ranking.rb > /usr/share/nginx/html/va.html"
+  command "source .bashrc;cd $VOICE_ACTOR_TOOL;bundle exec ruby sana_batch_4va.rb;bundle exec ruby gen_va_ranking.rb -o /usr/share/nginx/html/va.html"
 end

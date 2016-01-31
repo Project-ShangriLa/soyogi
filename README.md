@@ -1,4 +1,12 @@
-#声優のデータを収集するツール
+#Soyogi - そよぎ -
+
+old project name: voice_actor_data_tool
+
+## 概要
+
+声優のデータを収集するツールです
+
+主にTwitterデータ関連を取り扱います
 
 ## 準備
 
@@ -25,7 +33,7 @@ bundle exec ruby sana_batch_4va.rb
 ## ランキングサイト構築
 
 ```
-ruby gen_va_ranking.rb > /usr/local/var/www/va/va.html
+bundle exec ruby gen_va_ranking.rb -o /usr/local/var/www/va/va.html
 ```
 
 ## cron起動
@@ -58,7 +66,7 @@ crontabを全上書きしたい場合は以下
 whenever -w -f private/schedule.rb 
 ```
 
-## メモ サイトを構築する際のOGP設定について
+## メモ: サイトを構築する際のOGP設定について
 
 - [http://qiita.com/taiyop/items/050c6749fb693dae8f82](http://qiita.com/taiyop/items/050c6749fb693dae8f82)
 - [https://developers.facebook.com/tools/debug/og/object/](https://developers.facebook.com/tools/debug/og/object/)
