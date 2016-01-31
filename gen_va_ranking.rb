@@ -79,6 +79,20 @@ head = <<"EOS"
 <html>
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no">
+
+<meta content="声優 Twitterフォロワーランキング" name="title">
+<meta content="声優 Twitterフォロワーランキングです。700人以上の国内最大規模のデータを公開。毎日数回更新。制作：秋葉原IT戦略研究所" name="description">
+<meta content='声優,フォロワー数ランキング,声優ランキング,Twitterランキング,アニメ' name='keywords'>
+
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="声優 Twitterフォロワーランキング"/>
+<meta property="og:description" content="声優 Twitterフォロワーランキングです。700人以上の国内最大規模のデータを公開。毎日数回更新。制作：秋葉原IT戦略研究所" />
+<meta property="og:image" content="https://secure.gravatar.com/avatar/ba111671b9d4dbdb9eff02471c361827" />
+<meta property="og:url" content="http://data.akiba-net.com/va.html" />
+<meta property="og:site_name" content="声優 Twitterフォロワーランキング"/>
+<meta content="summary" name="twitter:card" />
+<meta content="@n428dev" name="twitter:site" />
+
 <head>
 <title>声優 Twitterフォロワーランキング</title>
 <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
