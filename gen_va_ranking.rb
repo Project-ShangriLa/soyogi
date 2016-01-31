@@ -62,8 +62,8 @@ EOS
      <td class="col-md-2 hidden-xs hidden-sm">#{va[:screen_name]}</td>
     </tr>
 EOS
-    body_string += table_end + rakuten_widget + table_start if (i % 100) == 0 && (i % 200) != 0
-    body_string += table_end + amazon_widget2 + table_start if (i % 200) == 0 && i != 0
+    body_string += table_end + rakuten_widget + table_start if i == 100
+    body_string += table_end + amazon_widget2 + table_start if i == 200
   end
 
   body_string += table_end
