@@ -63,7 +63,7 @@ EOS
     </tr>
 EOS
     body_string += table_end + rakuten_widget + table_start if i == 100
-    body_string += table_end + amazon_widget2 + table_start if i == 200
+    #body_string += table_end + amazon_widget2 + table_start if i == 200
   end
 
   body_string += table_end
@@ -116,15 +116,6 @@ head = <<"EOS"
 EOS
 
 footer = <<"EOS"
-<!-- mobile only  Mobile Popover-->
-<script type="text/javascript">
-  amzn_assoc_ad_type = "link_enhancement_widget";
-  amzn_assoc_tracking_id = "voiceactor-akiba-22";
-  amzn_assoc_placement = "";
-  amzn_assoc_marketplace = "amazon";
-  amzn_assoc_region = "JP";
-</script>
-<script src="//z-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=JP"></script>
 </body>
 </html>
 EOS
