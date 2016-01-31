@@ -66,9 +66,10 @@ EOS
   end
 
   body_string += table_end
-  #TODO og:title等 SEO http://qiita.com/taiyop/items/050c6749fb693dae8f82
+  #og:title等 SEO http://qiita.com/taiyop/items/050c6749fb693dae8f82
   #TODO 上位をグラフ保存化
   #TODO ランキングコピー化
+  #TODO 最新のコメントをマウスオーバー表示
   #TODO シェアボタン
   #TODO Google-GA
   #TODO DMM AA
@@ -81,17 +82,21 @@ head = <<"EOS"
 <meta name="format-detection" content="telephone=no">
 
 <meta content="声優 Twitterフォロワーランキング" name="title">
-<meta content="声優 Twitterフォロワーランキングです。700人以上の国内最大規模のデータを公開。毎日数回更新。制作：秋葉原IT戦略研究所" name="description">
+<meta content="声優 Twitterフォロワーランキングです。国内最大規模、700人以上の声優データを公開。毎日数回更新。制作：秋葉原IT戦略研究所" name="description">
 <meta content='声優,フォロワー数ランキング,声優ランキング,Twitterランキング,アニメ' name='keywords'>
 
-<meta property="og:type" content="article"/>
+<meta property="og:type" content="website"/>
 <meta property="og:title" content="声優 Twitterフォロワーランキング"/>
-<meta property="og:description" content="声優 Twitterフォロワーランキングです。700人以上の国内最大規模のデータを公開。毎日数回更新。制作：秋葉原IT戦略研究所" />
+<meta property="og:description" content="声優 Twitterフォロワーランキングです。国内最大規模、700人以上の声優データを公開。毎日数回更新。制作：秋葉原IT戦略研究所" />
 <meta property="og:image" content="http://data.akiba-net.com/va_og_image.png" />
 <meta property="og:url" content="http://data.akiba-net.com/va.html" />
 <meta property="og:site_name" content="声優 Twitterフォロワーランキング"/>
-<!-- <meta content="summary" name="twitter:card" /> -->
-<meta content="@n428dev" name="twitter:site" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@428dev" />
+<meta name="twitter:title" content="声優 Twitterフォロワーランキング" />
+<meta name="twitter:description" content="声優 Twitterフォロワーランキングです。国内最大規模、700人以上の声優データを公開。毎日数回更新。制作：秋葉原IT戦略研究所" />
+<meta name="twitter:image" content="http://data.akiba-net.com/va_og_image.png" />
 
 <head>
 <title>声優 Twitterフォロワーランキング</title>
