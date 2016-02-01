@@ -150,7 +150,7 @@ EOS
 output_filename = nil
 opt = OptionParser.new
 Version = '1.0.0'
-@idol_unit = 'ラブライブ'
+@idol_unit = '%ラブライブ%'
 opt.on('-o OUTPUT FILENAME', 'output filename') {|v| output_filename = v }
 opt.on('-m', 'MUSE ONLY') {@idol_unit = '%μ%' }
 opt.on('-a', 'AQOURS ONLY') {@idol_unit = '%Aqours%' }
