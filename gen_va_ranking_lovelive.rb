@@ -70,7 +70,7 @@ EOS
 
   @db = Sequel.mysql2('anime_admin_development', :host=>'localhost', :user=>'root', :password=>'', :port=>'3306')
 
-  target_account_list = @db[:voice_actor_masters].grep(:note, '%ラブライブ%').select_map(:twitter_account)
+  target_account_list = @db[:voice_actor_masters].grep(:note, @idol_unit).select_map(:twitter_account)
 
   vatfs = @db[:voice_actor_twitter_follwer_status].reverse(:follower).select_all
 
@@ -129,10 +129,6 @@ head = <<"EOS"
 <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
 
-  <script>
-  $(document).ready(function(){
-  });
-  </script>
 </head>
 <body>
 EOS
@@ -154,7 +150,10 @@ EOS
 output_filename = nil
 opt = OptionParser.new
 Version = '1.0.0'
+@idol_unit = 'ラブライブ'
 opt.on('-o OUTPUT FILENAME', 'output filename') {|v| output_filename = v }
+opt.on('-m', 'MUSE ONLY') {@idol_unit = '%μ%' }
+opt.on('-a', 'AQOURS ONLY') {@idol_unit = '%Aqours%' }
 opt.parse!(ARGV)
 
 if output_filename.nil?
