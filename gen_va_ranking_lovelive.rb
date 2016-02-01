@@ -21,7 +21,7 @@ EOS
 <table class="table table-striped alt-table-responsive">
 <thead>
 <tr>
-<th class="col-md-1">順位</th>
+<th class="col-md-1">声優全体順位</th>
 <th class="col-md-1">フォロワー数</th>
 <th class="col-md-1">画像</th>
 <th class="col-md-2">名前</th>
@@ -35,35 +35,38 @@ EOS
   table_end = '</tbody></table>'
 
   body_string = <<"EOS"
-<h1>声優 Twitterフォロワーランキング</h1>
+<h1>声優 Twitterフォロワーランキング ラブライブver</h1>
 <div>
 制作:
   <a href="#" onclick="javascript:window.open('http://akibalab.info/');">
     <img src="https://objectstore-r1nd1001.cnode.jp/v1/93a6500c0a1e4c68b976e5e46527145c/data/aisl_logo.png">
   </a>
 </div>
-#{amazon_widget}
+#{amazon_widget2}
 <p class="text-info lead">データ更新日時 #{Time.now.strftime("%Y-%m-%d %H時%M分%S秒")}</p>
 #{table_start}
 EOS
 
   @db = Sequel.mysql2('anime_admin_development', :host=>'localhost', :user=>'root', :password=>'', :port=>'3306')
 
+  target_account_list = @db[:voice_actor_masters].grep(:note, '%ラブライブ%').select_map(:twitter_account)
+
   vatfs = @db[:voice_actor_twitter_follwer_status].reverse(:follower).select_all
 
   vatfs.each_with_index do |va, i|
-    body_string += <<EOS
-    <tr>
-     <th class="col-md-1"><p class="lead">#{i + 1}</p></th>
-     <td class="col-md-1"><p class="lead">#{va[:follower]}</p></td>
-     <td class="col-md-1"><a href="#" onclick="javascript:window.open('https://twitter.com/#{va[:screen_name]}');"><img data-layzr="#{va[:profile_image_url].gsub(/normal/,'bigger')}"></a></td>
-     <td class="col-md-2"><p class="lead">#{va[:name]}</p></td>
-     <td class="col-md-5 hidden-xs hidden-sm">#{va[:description]}</td>
-     <td class="col-md-2 hidden-xs hidden-sm">#{va[:screen_name]}</td>
-    </tr>
+
+    if target_account_list.include?(va[:screen_name])
+      body_string += <<EOS
+      <tr>
+       <th class="col-md-1"><p class="lead">#{i + 1}位</p></th>
+       <td class="col-md-1"><p class="lead">#{va[:follower]}</p></td>
+       <td class="col-md-1"><a href="#" onclick="javascript:window.open('https://twitter.com/#{va[:screen_name]}');"><img data-layzr="#{va[:profile_image_url].gsub(/normal/,'bigger')}"></a></td>
+       <td class="col-md-2"><p class="lead">#{va[:name]}</p></td>
+       <td class="col-md-5 hidden-xs hidden-sm">#{va[:description]}</td>
+       <td class="col-md-2 hidden-xs hidden-sm">#{va[:screen_name]}</td>
+      </tr>
 EOS
-    body_string += table_end + rakuten_widget + table_start if i == 100
-    #body_string += table_end + amazon_widget2 + table_start if i == 200
+    end
   end
 
   body_string += table_end
@@ -86,8 +89,8 @@ head = <<"EOS"
 <meta content="声優 Twitterフォロワーランキングです。国内最大規模、700人以上の声優データを公開。毎日数回更新。制作：秋葉原IT戦略研究所" name="description">
 <meta content='声優,フォロワー数ランキング,声優ランキング,Twitterランキング,アニメ' name='keywords'>
 
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="声優 Twitterフォロワーランキング"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="声優 Twitterフォロワーランキング ラブライブver"/>
 <meta property="og:description" content="声優 Twitterフォロワーランキングです。国内最大規模、700人以上の声優データを公開。毎日数回更新。制作：秋葉原IT戦略研究所" />
 <meta property="og:image" content="http://data.akiba-net.com/va_og_image.png" />
 <meta property="og:url" content="http://data.akiba-net.com/va.html" />
@@ -95,7 +98,7 @@ head = <<"EOS"
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@428dev" />
-<meta name="twitter:title" content="声優 Twitterフォロワーランキング" />
+<meta name="twitter:title" content="声優 Twitterフォロワーランキング ラブライブ版" />
 <meta name="twitter:description" content="声優 Twitterフォロワーランキングです。国内最大規模、700人以上の声優データを公開。毎日数回更新。制作：秋葉原IT戦略研究所" />
 <meta name="twitter:image" content="http://data.akiba-net.com/va_og_image.png" />
 
