@@ -42,7 +42,7 @@ EOS
     <img src="https://objectstore-r1nd1001.cnode.jp/v1/93a6500c0a1e4c68b976e5e46527145c/data/aisl_logo.png">
   </a>
 </div>
-#{amazon_widget2}
+
 <p class="text-info lead">データ更新日時 #{Time.now.strftime("%Y-%m-%d %H時%M分%S秒")}</p>
 #{table_start}
 EOS
