@@ -6,7 +6,7 @@ require 'optparse'
     'anju_inami' => 'http://data.akiba-net.com/sp/lovelive_aqours/thumb01.png',
     'Rikako_Aida' => 'http://data.akiba-net.com/sp/lovelive_aqours/thumb02.png',
     'suwananaka' => 'http://data.akiba-net.com/sp/lovelive_aqours/thumb03.png',
-    'arisakomiya' => 'http://data.akiba-net.com/sp/lovelive_aqours/thumb04.png',
+    'box_komiyaarisa' => 'http://data.akiba-net.com/sp/lovelive_aqours/thumb04.png',
     'Saito_Shuka' => 'http://data.akiba-net.com/sp/lovelive_aqours/thumb05.png',
     'Aikyan_' => 'http://data.akiba-net.com/sp/lovelive_aqours/thumb06.png',
     'Kanako_tktk' => 'http://data.akiba-net.com/sp/lovelive_aqours/thumb07.png',
