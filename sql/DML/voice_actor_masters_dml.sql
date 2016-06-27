@@ -1,13 +1,13 @@
 # ************************************************************
 # Sequel Pro SQL dump
-# バージョン 4499
+# バージョン 4529
 #
 # http://www.sequelpro.com/
 # https://github.com/sequelpro/sequelpro
 #
 # ホスト: 127.0.0.1 (MySQL 5.6.13)
 # データベース: anime_admin_development
-# 作成時刻: 2016-02-01 14:28:48 +0000
+# 作成時刻: 2016-06-27 14:16:37 +0000
 # ************************************************************
 
 
@@ -540,7 +540,7 @@ VALUES
 	(975,'松嵜麗','reimatsuzaki',NULL,NULL,1,NULL,NULL,'2016-01-24 00:00:00','2016-01-24 00:00:00','http://seesaawiki.jp/w/wikkkiiii/d/%C0%BC%CD%A5'),
 	(976,'丸山未沙希','miiisaki_m',NULL,NULL,1,NULL,NULL,'2016-01-24 00:00:00','2016-01-24 00:00:00','http://seesaawiki.jp/w/wikkkiiii/d/%C0%BC%CD%A5'),
 	(977,'三谷翔子','shokomtn',NULL,NULL,1,NULL,NULL,'2016-01-24 00:00:00','2016-01-24 00:00:00','http://seesaawiki.jp/w/wikkkiiii/d/%C0%BC%CD%A5'),
-	(978,'水瀬いのり','inori_minase',NULL,NULL,1,NULL,NULL,'2016-01-24 00:00:00','2016-01-24 00:00:00','http://seesaawiki.jp/w/wikkkiiii/d/%C0%BC%CD%A5'),
+	(978,'水瀬いのり(旧)','inori_minase',NULL,NULL,1,NULL,NULL,'2016-01-24 00:00:00','2016-01-24 00:00:00','http://seesaawiki.jp/w/wikkkiiii/d/%C0%BC%CD%A5'),
 	(979,'宮村優子','386miyamura',NULL,NULL,1,NULL,NULL,'2016-01-24 00:00:00','2016-01-24 00:00:00','http://seesaawiki.jp/w/wikkkiiii/d/%C0%BC%CD%A5'),
 	(980,'杜野まこ','makomorino',NULL,NULL,1,NULL,NULL,'2016-01-24 00:00:00','2016-01-24 00:00:00','http://seesaawiki.jp/w/wikkkiiii/d/%C0%BC%CD%A5'),
 	(981,'山野さと子','YamanoSatoko',NULL,NULL,1,NULL,NULL,'2016-01-24 00:00:00','2016-01-24 00:00:00','http://seesaawiki.jp/w/wikkkiiii/d/%C0%BC%CD%A5'),
@@ -857,7 +857,7 @@ VALUES
 	(2059,'愛美','aimi_sound',NULL,NULL,1,NULL,NULL,'2016-01-30 19:45:28','2016-01-30 19:45:28','http://meyou.jp/ranking/follower_voice'),
 	(2060,'楠田亜衣奈','kusudaaina',NULL,NULL,1,'ラブライブ,μ\'s',NULL,'2016-02-01 04:30:00','2016-02-01 04:30:00','origin'),
 	(2061,'久保ユリカ','shikaco_staff',NULL,NULL,1,'ラブライブ,μ\'s',NULL,'2016-02-01 04:30:00','2016-02-01 04:30:00','origin'),
-	(2062,'小宮有紗','arisakomiya',NULL,NULL,1,'ラブライブ！サンシャイン!!,Aqours',NULL,'2016-02-01 04:30:00','2016-02-01 04:30:00','origin'),
+	(2062,'小宮有紗','arisakomiya',NULL,NULL,1,'',NULL,'2016-02-01 04:30:00','2016-02-01 04:30:00','origin'),
 	(2063,'小林愛香','Aikyan_',NULL,NULL,1,'ラブライブ！サンシャイン!!,Aqours',NULL,'2016-02-01 04:30:00','2016-02-01 04:30:00','origin'),
 	(2064,'高槻かなこ','Kanako_tktk',NULL,NULL,1,'ラブライブ！サンシャイン!!,Aqours',NULL,'2016-02-01 04:30:00','2016-02-01 04:30:00','origin'),
 	(2065,'芹澤優','iRis_s_yu','','',1,'i☆Ris,プリパラ','','2016-02-01 21:15:33','2016-02-01 21:15:33','origin'),
@@ -871,7 +871,10 @@ VALUES
 	(2073,'桜奈里彩','sakuranarisa','','',1,'A応P','','2016-02-01 22:17:24','2016-02-01 22:17:24',NULL),
 	(2074,'広瀬ゆうき','hiroseyuuki','','',1,'A応P','','2016-02-01 22:19:46','2016-02-01 22:19:46',NULL),
 	(2075,'水希 蒼','mizuki__aoi','','',1,'A応P','','2016-02-01 22:21:05','2016-02-01 22:21:05',NULL),
-	(2076,'巴奎依','kei_tomoe','','',1,'A応P','','2016-02-01 22:22:59','2016-02-01 22:22:59',NULL);
+	(2076,'巴奎依','kei_tomoe','','',1,'A応P','','2016-02-01 22:22:59','2016-02-01 22:22:59',NULL),
+	(2077,'水瀬いのり','inoriminase',NULL,NULL,1,'新アカウント',NULL,'2016-03-26 04:00:00','2016-03-26 04:00:00',NULL),
+	(2078,'日岡なつみ','HIOKANATSUMI',NULL,NULL,1,'くまみこ',NULL,'2016-04-11 04:42:00','2016-04-11 04:42:00',NULL),
+	(2079,'小宮有紗official','box_komiyaarisa',NULL,NULL,1,'ラブライブ！サンシャイン!!,Aqours',NULL,'2016-06-27 23:00:00','2016-06-27 23:00:00','origin');
 
 /*!40000 ALTER TABLE `voice_actor_masters` ENABLE KEYS */;
 UNLOCK TABLES;
