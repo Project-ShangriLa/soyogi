@@ -19,26 +19,27 @@ def connect_twitter(account_list)
   status_records = []
   history_records = []
 
-  @tw.users(account_list).each do |user|
-    status_records << [
-        @account_key_hash[user.screen_name],
-        user.followers_count,
-        @note,
-        @today,
-        @today
-    ]
+  account_list.each do |account|
+    @tw.friends(account, {:count => 200}).each do |friend|
+      status_records << [
+          account,
+          friend.screen_name,
+          @note,
+          @today,
+          @today
+      ]
 
-    history_records << [
-        @account_key_hash[user.screen_name],
-        user.followers_count,
-        @note,
-        @today,
-        @today,
-        @today
-    ]
+      history_records << [
+          account,
+          friend.screen_name,
+          @note,
+          @today,
+          @today,
+          @today
+      ]
 
+    end
   end
-
 
   [status_records, history_records]
 end
@@ -77,5 +78,5 @@ p account_list
 
 @db = Sequel.mysql2('anime_admin_development', :host=>'localhost', :user=>'root', :password=>'', :port=>'3306')
 
-status_records, history_records = connet_twitter(account_list)
+status_records, history_records = connect_twitter(account_list)
 save_db(status_records, history_records)
