@@ -23,8 +23,19 @@ every 4.hour do
   command "source .bashrc;cd $VOICE_ACTOR_TOOL;bundle exec ruby sana_batch_4va.rb;bundle exec ruby gen_va_ranking.rb -o /usr/share/nginx/html/va.html"
 end
 
-every 6.hour do
-  command "source .bashrc;cd $VOICE_ACTOR_TOOL;bundle exe ruby follow_exchange_save.rb -f etc/Aqours.txt;"
+ex_aquours = "source .bashrc;cd $VOICE_ACTOR_TOOL;bundle exe ruby follow_exchange_save.rb -f etc/Aqours.txt;"
+
+every :day, :at => '00:10' do
+  command ex_aquours
+end
+every :day, :at => '06:10' do
+  command ex_aquours
+end
+every :day, :at => '12:10' do
+  command ex_aquours
+end
+every :day, :at => '18:10' do
+  command ex_aquours
 end
 
 every :day, :at => '02:10am' do
