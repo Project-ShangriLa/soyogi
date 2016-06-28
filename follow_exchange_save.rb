@@ -2,6 +2,7 @@ require 'sequel'
 require 'optparse'
 require "./twitter.rb"
 
+# 相互フォローワーを割り出すためにfriendリストをテーブルに保存する
 
 opt = OptionParser.new
 Version = '1.0.0'

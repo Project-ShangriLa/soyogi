@@ -1,0 +1,1 @@
+select twitter_account, count(*) as friends from voice_actor_follow_exchange_status group by twitter_account;
