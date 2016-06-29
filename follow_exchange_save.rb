@@ -50,8 +50,14 @@ def connect_twitter(account_list)
   [status_records, history_records]
 end
 
+def delete_old_data(account_list)
+  @db[:voice_actor_follow_exchange_status].where(:twitter_account => account_list).delete
+end
+
 def save_db(stasus_records, history_records)
-  @db[:voice_actor_follow_exchange_status].truncate
+  #@db[:voice_actor_follow_exchange_status].truncate
+
+
   @db[:voice_actor_follow_exchange_status].import([
                                                       :twitter_account,
                                                       :friend_account,
@@ -71,7 +77,6 @@ def save_db(stasus_records, history_records)
                                                     ], history_records)
 end
 
-
 account_list = []
 
 open(@account_list_file) {|file|
@@ -84,5 +89,8 @@ p account_list
 
 @db = Sequel.mysql2('anime_admin_development', :host=>'localhost', :user=>'root', :password=>'', :port=>'3306')
 
+delete_old_data(account_list)
+
 status_records, history_records = connect_twitter(account_list)
+
 save_db(status_records, history_records)
