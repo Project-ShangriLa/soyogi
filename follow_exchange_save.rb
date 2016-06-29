@@ -15,30 +15,35 @@ opt.parse!(ARGV)
 
 @today = DateTime.now
 
-# 15分15回、フレンドが200を超えるとカーソルが必要なので注意
+LOOKUP_MAX = 100
+
 def connect_twitter(account_list)
+
   status_records = []
   history_records = []
 
   account_list.each do |account|
-    @tw.friends(account, {:count => 200}).each do |friend|
-      status_records << [
-          account,
-          friend.screen_name,
-          @note,
-          @today,
-          @today
-      ]
+    puts account
 
-      history_records << [
-          account,
-          friend.screen_name,
-          @note,
-          @today,
-          @today,
-          @today
-      ]
+    @tw.friend_ids(account).each_slice(LOOKUP_MAX).each do |slice|
+      @tw.users(slice).each do |friend|
+        status_records << [
+            account,
+            friend.screen_name,
+            @note,
+            @today,
+            @today
+        ]
 
+        history_records << [
+            account,
+            friend.screen_name,
+            @note,
+            @today,
+            @today,
+            @today
+        ]
+      end
     end
   end
 
