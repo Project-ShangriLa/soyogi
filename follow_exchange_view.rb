@@ -1,6 +1,8 @@
 require 'sequel'
 require 'optparse'
 
+#bundle exe ruby follow_exchange_view.rb -f etc/Aqours.txt -m html  > /tmp/test.html
+#bundle exe ruby follow_exchange_view.rb -f etc/muse.txt -m html > /tmp/muse.html
 
 opt = OptionParser.new
 Version = '1.0.0'
@@ -49,18 +51,20 @@ def stdout_for_csv(account_list)
 end
 
 def body(account_list)
+  name_hash = @db[:voice_actor_masters].where(:twitter_account => account_list).select_hash(:twitter_account , :name )
+  image_hash = @db[:voice_actor_twitter_follwer_status].where(:screen_name => account_list).select_hash(:screen_name , :profile_image_url )
 
   account_th = ""
 
   account_list.each do |account|
-    account_th += "<th class=\"col-xs-2 col-md-1\">#{account}</th>"
+    account_th += "<th class=\"col-xs-2 col-md-1\">#{name_hash[account]} <img src=\"#{image_hash[account]}\"></th>"
   end
 
   table_start = <<EOS
 <table class="table table-striped alt-table-responsive">
 <thead>
 <tr>
-<th class="col-xs-2 col-md-1">Twitteアカウント</th>
+<th class="col-xs-2 col-md-1">Twitteアカウント/フォローワー対象</th>
  #{account_th}
 </tr>
 </thead>
@@ -82,7 +86,7 @@ EOS
 
     friend_th+='<tr>'
     #TODO写真
-    friend_th+= "<th class=\"col-xs-2 col-md-1\"><p class=\"lead\">#{account}</p></th>"
+    friend_th+= "<th class=\"col-xs-2 col-md-1\"><p class=\"lead\">#{name_hash[account]} <img src=\"#{image_hash[account]}\"></p></th>"
     account_list.each do |_account|
 
       if _account == account
