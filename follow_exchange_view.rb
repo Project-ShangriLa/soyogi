@@ -64,7 +64,10 @@ def body(account_list)
 <table class="table table-striped alt-table-responsive">
 <thead>
 <tr>
-<th class="col-xs-2 col-md-2">Twitteアカウント/フォロー対象</th>
+<th class="col-xs-2 col-md-2">
+ Twitter 声優相互フォロワー表<br>
+ Twitteアカウント/フォロー対象
+</th>
  #{account_th}
 </tr>
 </thead>
