@@ -64,7 +64,7 @@ def body(account_list)
 <table class="table table-striped alt-table-responsive">
 <thead>
 <tr>
-<th class="col-xs-2 col-md-1">Twitteアカウント/フォロー対象</th>
+<th class="col-xs-2 col-md-2">Twitteアカウント/フォロー対象</th>
  #{account_th}
 </tr>
 </thead>
@@ -86,7 +86,7 @@ EOS
 
     friend_th+='<tr>'
     #TODO写真
-    friend_th+= "<th class=\"col-xs-2 col-md-1\">#{name_hash[account]}  <img src=\"#{image_hash[account]}\"></th>"
+    friend_th+= "<th class=\"col-xs-2 col-md-2\">#{name_hash[account]}  <img src=\"#{image_hash[account]}\"> <img src=\"#{@chara_image[account]}\" width=\"48\"></th>"
     account_list.each do |_account|
 
       if _account == account
