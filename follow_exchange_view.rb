@@ -65,7 +65,7 @@ def body(account_list)
 <thead>
 <tr>
 <th class="col-xs-2 col-md-2">
- Twitter 声優相互フォロワー表<br>
+ <font color="red">Twitter 声優相互フォロワー表</font><br>
  Twitteアカウント/フォロー対象
 </th>
  #{account_th}
