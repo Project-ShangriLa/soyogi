@@ -1,0 +1,20 @@
+@chara_image = {
+    'anju_inami' => 'http://data.akiba-net.com/sp/lovelive_aqours/thumb01.png',
+    'Rikako_Aida' => 'http://data.akiba-net.com/sp/lovelive_aqours/thumb02.png',
+    'suwananaka' => 'http://data.akiba-net.com/sp/lovelive_aqours/thumb03.png',
+    'box_komiyaarisa' => 'http://data.akiba-net.com/sp/lovelive_aqours/thumb04.png',
+    'Saito_Shuka' => 'http://data.akiba-net.com/sp/lovelive_aqours/thumb05.png',
+    'Aikyan_' => 'http://data.akiba-net.com/sp/lovelive_aqours/thumb06.png',
+    'Kanako_tktk' => 'http://data.akiba-net.com/sp/lovelive_aqours/thumb07.png',
+    'aina_suzuki723' => 'http://data.akiba-net.com/sp/lovelive_aqours/thumb08.png',
+    'furihata_ai' => 'http://data.akiba-net.com/sp/lovelive_aqours/thumb09.png',
+    'nanjolno' => 'http://data.akiba-net.com/sp/lovelive_muse/twitter2nd_eri.jpg',
+    'Nitta_Emi' => 'http://data.akiba-net.com/sp/lovelive_muse/twitter2nd_honoka.jpg',
+    'shikaco_staff' => 'http://data.akiba-net.com/sp/lovelive_muse/twitter2nd_hanayo.jpg',
+    'aya_uchida' => 'http://data.akiba-net.com/sp/lovelive_muse/twitter2nd_kotori.jpg',
+    'pile_eric' => 'http://data.akiba-net.com/sp/lovelive_muse/twitter2nd_maki.jpg',
+    'tokui_sorangley' => 'http://data.akiba-net.com/sp/lovelive_muse/twitter2nd_nico.jpg',
+    'kusudaaina' => 'http://data.akiba-net.com/sp/lovelive_muse/twitter2nd_nozomi.jpg',
+    'rippialoha' => 'http://data.akiba-net.com/sp/lovelive_muse/twitter2nd_rin.jpg',
+    'mimori_suzuko' => 'http://data.akiba-net.com/sp/lovelive_muse/twitter2nd_umi.jpg'
+}

@@ -1,6 +1,6 @@
 require 'sequel'
 require 'optparse'
-
+require './lib/character_image.rb'
 #bundle exe ruby follow_exchange_view.rb -f etc/Aqours.txt -m html  > /tmp/test.html
 #bundle exe ruby follow_exchange_view.rb -f etc/muse.txt -m html > /tmp/muse.html
 
@@ -57,7 +57,7 @@ def body(account_list)
   account_th = ""
 
   account_list.each do |account|
-    account_th += "<th class=\"col-xs-2 col-md-1\">#{name_hash[account]} <img src=\"#{image_hash[account]}\"></th>"
+    account_th += "<th class=\"col-xs-2 col-md-1\">#{name_hash[account]} <img src=\"#{image_hash[account]}\"> <img src=\"#{@chara_image[account]}\" width=\"48\"></p></th>"
   end
 
   table_start = <<EOS
@@ -86,7 +86,7 @@ EOS
 
     friend_th+='<tr>'
     #TODO写真
-    friend_th+= "<th class=\"col-xs-2 col-md-1\"><p class=\"lead\">#{name_hash[account]} <img src=\"#{image_hash[account]}\"></p></th>"
+    friend_th+= "<th class=\"col-xs-2 col-md-1\"><p class=\"lead\">#{name_hash[account]} <img src=\"#{image_hash[account]}\"> <img src=\"#{@chara_image[account]}\" width=\"48\"></p></th>"
     account_list.each do |_account|
 
       if _account == account
