@@ -7,7 +7,7 @@
 #
 # ホスト: 127.0.0.1 (MySQL 5.6.13)
 # データベース: anime_admin_development
-# 作成時刻: 2016-11-06 16:42:37 +0000
+# 作成時刻: 2016-11-06 16:50:21 +0000
 # ************************************************************
 
 
@@ -88,7 +88,7 @@ VALUES
 	(41,'上坂すみれ','Uesakasumire',NULL,NULL,1,NULL,NULL,'2016-01-24 00:00:00','2016-01-24 00:00:00','http://vatwitter.damebito.com/'),
 	(42,'植原みゆき','MyumyU_Uehara',NULL,NULL,1,NULL,NULL,'2016-01-24 00:00:00','2016-01-24 00:00:00','http://vatwitter.damebito.com/'),
 	(43,'内田彩','aya_uchida',NULL,NULL,1,'ラブライブ,μ\'s',NULL,'2016-01-24 00:00:00','2016-01-24 00:00:00','http://vatwitter.damebito.com/'),
-	(44,'内田真礼','MaayaUchida',NULL,NULL,1,NULL,NULL,'2016-01-24 00:00:00','2016-01-24 00:00:00','http://vatwitter.damebito.com/'),
+	(44,'内田真礼スタッフ','MaayaUchida',NULL,NULL,1,NULL,NULL,'2016-01-24 00:00:00','2016-01-24 00:00:00','http://vatwitter.damebito.com/'),
 	(45,'内海慶子','utsumikeiko',NULL,NULL,1,NULL,NULL,'2016-01-24 00:00:00','2016-01-24 00:00:00','http://vatwitter.damebito.com/'),
 	(46,'宇和川恵美','uwaemi',NULL,NULL,1,NULL,NULL,'2016-01-24 00:00:00','2016-01-24 00:00:00','http://vatwitter.damebito.com/'),
 	(47,'雨蘭咲木子','uran_sakiko',NULL,NULL,1,NULL,NULL,'2016-01-24 00:00:00','2016-01-24 00:00:00','http://vatwitter.damebito.com/'),
@@ -874,7 +874,8 @@ VALUES
 	(2076,'巴奎依','kei_tomoe','','',1,'A応P','','2016-02-01 22:22:59','2016-02-01 22:22:59',NULL),
 	(2077,'水瀬いのり','inoriminase',NULL,NULL,1,'新アカウント',NULL,'2016-03-26 04:00:00','2016-03-26 04:00:00',NULL),
 	(2078,'日岡なつみ','HIOKANATSUMI',NULL,NULL,1,'くまみこ',NULL,'2016-04-11 04:42:00','2016-04-11 04:42:00',NULL),
-	(2079,'小宮有紗','box_komiyaarisa',NULL,NULL,1,'ラブライブ！サンシャイン!!,Aqours',NULL,'2016-06-27 23:00:00','2016-06-27 23:00:00','origin');
+	(2079,'小宮有紗','box_komiyaarisa',NULL,NULL,1,'ラブライブ！サンシャイン!!,Aqours',NULL,'2016-06-27 23:00:00','2016-06-27 23:00:00','origin'),
+	(2080,'内田真礼','maaya_taso',NULL,NULL,1,NULL,NULL,'2016-11-07 00:00:00','2016-11-07 00:00:00','origin');
 
 /*!40000 ALTER TABLE `voice_actor_masters` ENABLE KEYS */;
 UNLOCK TABLES;
