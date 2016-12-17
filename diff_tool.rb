@@ -11,6 +11,7 @@ require 'date'
 
 target_day = Date.strptime(ARGV[0], "%Y-%m-%d")
 next_day = target_day + 1
+force_count = ARGV[1] == '-f'
 
 @db = Sequel.mysql2('anime_admin_development', :host=>'localhost', :user=>'root', :password=>'', :port=>'3306')
 
@@ -28,7 +29,16 @@ hist_row.each do |row|
   next unless status_rows.has_key?(vid)
 
   diff_map[vid] = status_rows[vid][1] - row[:follower] unless diff_map.has_key?(vid)
+
 end
+
+if force_count
+  status_rows.each do |row|
+    vid = row[:voice_actor_master_id]
+    diff_map[vid] = status_rows[vid][1] unless hist_row.has_key?(vid)
+  end
+end
+
 
 diff_list = diff_map.sort_by {|k, v| v }
 
@@ -38,5 +48,5 @@ diff_list.reverse.each do |diff|
 
   next unless status_rows.has_key?(vid)
 
-  puts "#{status_rows[vid][0]} #{diff[1]}"
+  puts "#{status_rows[vid][0]},#{diff[1]}"
 end
