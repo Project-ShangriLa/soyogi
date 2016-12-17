@@ -22,10 +22,11 @@ hist_row = @db[:voice_actor_twitter_follwer_status_histories].where("get_date >=
 #p hist_row
 
 diff_map = {}
+hist_row_map = {}
 
 hist_row.each do |row|
   vid = row[:voice_actor_master_id]
-
+  hist_row_map[vid] = {}
   next unless status_rows.has_key?(vid)
 
   diff_map[vid] = status_rows[vid][1] - row[:follower] unless diff_map.has_key?(vid)
@@ -35,7 +36,7 @@ end
 if force_count
   status_rows.each do |row|
     vid = row[0]
-    diff_map[vid] = status_rows[vid][1] unless hist_row.has_key?(vid)
+    diff_map[vid] = status_rows[vid][1] unless hist_row_map.has_key?(vid)
   end
 end
 
