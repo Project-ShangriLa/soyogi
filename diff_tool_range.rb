@@ -13,7 +13,6 @@ start_day = Date.strptime(ARGV[0], "%Y-%m-%d")
 start_day_next = start_day + 1
 target_day = Date.strptime(ARGV[1], "%Y-%m-%d")
 next_day = target_day + 1
-force_count = ARGV[2] == '-f'
 
 @db = Sequel.mysql2('anime_admin_development', :host=>'localhost', :user=>'root', :password=>'', :port=>'3306')
 
@@ -32,15 +31,8 @@ hist_row.each do |row|
   hist_row_map[vid] = {}
   next unless status_rows.has_key?(vid)
 
-  diff_map[vid] = status_rows[vid][1] - row[:follower] unless diff_map.has_key?(vid)
+  diff_map[vid] =  row[:follower] - status_rows[vid][1]  unless diff_map.has_key?(vid)
 
-end
-
-if force_count
-  status_rows.each do |row|
-    vid = row[0]
-    diff_map[vid] = status_rows[vid][1] unless hist_row_map.has_key?(vid)
-  end
 end
 
 
