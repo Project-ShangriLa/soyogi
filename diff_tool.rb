@@ -34,7 +34,7 @@ end
 
 if force_count
   status_rows.each do |row|
-    vid = row.key
+    vid = row[0]
     diff_map[vid] = status_rows[vid][1] unless hist_row.has_key?(vid)
   end
 end
